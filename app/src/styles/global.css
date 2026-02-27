@@ -117,36 +117,84 @@ button:focus-visible {
   width: 360px;
 }
 
-.phone-screen {
+.phone-frame:fullscreen {
   align-items: center;
-  aspect-ratio: 9 / 19.5;
-  background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
-  border-radius: 1.5rem;
-  color: #0f172a;
+  background: #020617;
+  border-radius: 0;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
   justify-content: center;
-  padding: 1.25rem;
+  width: 100%;
 }
 
-.phone-screen p {
+.phone-frame:fullscreen .phone-screen {
+  max-height: 90vh;
+}
+
+.phone-screen {
+  align-items: stretch;
+  aspect-ratio: 9 / 19.5;
+  background: #020617;
+  border-radius: 1.5rem;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+
+.phone-video {
+  background: #000000;
+  border-radius: 1rem;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.emulator-controls {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.emulator-controls button {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.7rem;
+  color: #f8fafc;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  min-height: 2.15rem;
+  padding: 0.35rem 0.45rem;
+}
+
+.emulator-controls button:hover {
+  background-color: #334155;
+}
+
+.video-missing {
+  align-content: center;
+  background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
+  border-radius: 1rem;
+  color: #0f172a;
+  display: grid;
+  gap: 0.6rem;
+  height: 100%;
+  justify-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.video-missing p {
   margin: 0;
 }
 
-.phone-screen button {
-  background-color: #334155;
-  border: 0;
-  border-radius: 999px;
-  color: #f8fafc;
-  cursor: not-allowed;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-}
-
-.phone-screen button:disabled {
-  opacity: 0.7;
+.video-missing code {
+  background: #e2e8f0;
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.3rem;
 }
 
 .projects-section h2 {

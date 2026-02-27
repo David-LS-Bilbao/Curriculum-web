@@ -6,6 +6,10 @@ Aplicacion frontend del proyecto **Curriculum Web (FCT)**, inicializada con:
 - Vite
 - TypeScript
 
+## Demo en producción
+
+- https://curriculumweb-six.vercel.app/
+
 ## Ubicacion del proyecto
 
 La app vive en `app/` porque el repositorio ya contiene `docs/` en la raiz.
@@ -47,6 +51,9 @@ app/
     styles/
 ```
 
-## Siguiente paso recomendado
+## Estado actual
 
-Implementar las secciones reales del MVP (Hero, EmulatorShowcase, Projects, Skills, Contact) reutilizando `src/content/` para contenido tipado.
+- Hero
+- EmulatorShowcase
+- Projects
+- Contact

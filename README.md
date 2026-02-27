@@ -24,6 +24,10 @@ Portfolio/CV web profesional para FCT (DAM), con un bloque central de demo tipo 
 - Projects (cards renderizadas desde contenido tipado)
 - Contact (email, copiar email y enlaces)
 
+## Demo en producción
+
+- https://curriculumweb-six.vercel.app/
+
 ## Requisitos
 
 - Node.js 20+

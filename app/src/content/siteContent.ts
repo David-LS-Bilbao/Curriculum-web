@@ -52,7 +52,7 @@ export const projects: ProjectItem[] = [
       'Secciones desacopladas para evolucionar el MVP por iteraciones.',
     ],
     repoUrl: 'https://github.com/',
-    demoUrl: 'https://example.com/',
+    demoUrl: 'https://curriculumweb-six.vercel.app/',
   },
   {
     id: 'mobile-emulator-demo',
