@@ -1,39 +1,38 @@
-# 01 — PROJECT CONTEXT (Curriculum Web)
+# Contexto del Proyecto: Curriculum Web (FCT)
 
-## Contexto (FCT)
-- Alumno: David (DAM).
-- Empresa FCT: Jaque Digital.
-- Objetivo: Portfolio/CV web profesional + “emulador” central para demo en Google Meet.
-- Entorno: Windows + VS Code.
-- Stack: React (preferible) + TypeScript si aporta + Git/GitHub + Deploy (Vercel/Netlify).
+## 1. Objetivo
+Desarrollar un **portfolio/CV web profesional** para FCT (DAM) con la empresa **JAQUE DIGITAL**, incluyendo un **emulador/marco central** para mostrar una app móvil durante una demo por **Google Meet**.
 
-## Requisitos del MVP
-1) Página principal con secciones:
+## 2. Stack
+- **Frontend:** React + Vite
+- **Lenguaje:** TypeScript (strict si es viable)
+- **Estilos:** Tailwind CSS (mobile-first)
+- **Deploy:** Vercel o Netlify
+- **Herramientas:** VS Code (Windows), Git/GitHub, Codex
+
+## 3. Requisitos del MVP (3 días)
+1) **Home** con secciones:
    - Hero + CTA (GitHub, LinkedIn, Descargar CV PDF, Contacto)
-   - EmulatorShowcase (marco móvil con video/iframe/carrusel)
-   - Proyectos (cards con links)
-   - Skills/Experiencia (resumen)
-   - Contacto (copiar email)
-2) Responsive y accesible.
-3) Deploy público + README.
+   - EmulatorShowcase (marco móvil)
+   - Proyectos (cards con links Repo/Demo/Video)
+   - Skills + Experiencia (resumen)
+   - Contacto (mail/LinkedIn, copiar email)
+2) **Emulador**:
+   - PhoneFrame centrado (desktop) y usable en móvil.
+   - Mostrar demo por:
+     - Video MP4 (preferido)
+     - Iframe (si hay demo web)
+     - Carrusel de capturas (fallback)
+   - Controles: cambiar demo + fullscreen + play/pause (si video)
+3) Responsive + accesible + deploy público + README.
 
-## EmulatorShowcase (núcleo de la demo)
-- Debe “vender” la app en una presentación:
-  - PhoneFrame centrado, limpio y grande en desktop.
-  - Fuente de demo configurable:
-    - Video MP4 recomendado (rápido y fiable en Meet)
-    - Iframe opcional (si hay web demo)
-    - Carrusel de capturas opcional
-- Controles mínimos:
-  - cambiar demo (2-3)
-  - play/pause (si video)
-  - fullscreen
-
-## No objetivos (por ahora)
+## 4. No objetivos (por ahora)
 - Backend propio
-- Login
-- CMS
+- Login / panel admin
+- CMS / i18n completo
 - Animaciones complejas
 
-## Definición de éxito
-- En 3 días: demo funcional, estética pro, repo limpio, documentación + evidencias completas.
+## 5. Definición de éxito
+- MVP funcional en 3 días
+- Repo limpio (commits claros + tags)
+- Documentación y evidencias listas para portfolio/FCT
