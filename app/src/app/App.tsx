@@ -1,26 +1,17 @@
-import { Section } from '../components/Section'
 import { EmulatorShowcase } from '../components/emulator/EmulatorShowcase'
-import { profile, sections } from '../content/siteContent'
+import { ContactSection } from '../components/sections/ContactSection'
+import { HeroSection } from '../components/sections/HeroSection'
+import { ProjectsSection } from '../components/sections/ProjectsSection'
+import { contact, heroCtas, profile, projects } from '../content/siteContent'
 import { AppLayout } from './layout/AppLayout'
 
 function App() {
-  const projectsSection = sections.find((section) => section.id === 'projects')
-
   return (
     <AppLayout>
-      <header className="hero">
-        <p className="eyebrow">Curriculum Web</p>
-        <h1>{profile.name}</h1>
-        <p>{profile.role}</p>
-      </header>
-
+      <HeroSection profile={profile} ctas={heroCtas} />
       <EmulatorShowcase />
-
-      {projectsSection ? (
-        <Section id={projectsSection.id} title={projectsSection.title}>
-          <p>{projectsSection.summary}</p>
-        </Section>
-      ) : null}
+      <ProjectsSection projects={projects} />
+      <ContactSection contact={contact} />
     </AppLayout>
   )
 }
