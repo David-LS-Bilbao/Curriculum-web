@@ -26,4 +26,5 @@ Ejecutar:
 
 ```bash
 npm run typecheck
+npm run lint
 npm run build
