@@ -71,3 +71,27 @@ Tu objetivo: entregar un **portfolio/CV web profesional** con un **emulador cent
 - **/audit**: revisar estructura, accesibilidad y performance.
 - **/refactor**: aplicar limpieza según `docs/CALIDAD.md`.
 - **/guardar**: generar resumen para evidencias y actualizar docs.
+
+## Regla de Cierre de Sprint (OBLIGATORIA)
+Al finalizar cada sprint (Día 1, Día 2, Día 3) o cada hito relevante:
+
+1) Crear/actualizar un archivo en `docs/memoria/` con nombre:
+   - `SPRINT_D1_HOME.md`
+   - `SPRINT_D2_EMULATOR.md`
+   - `SPRINT_D3_RELEASE.md`
+
+2) El archivo debe incluir SIEMPRE este esquema:
+   - Resumen (5–8 líneas)
+   - Objetivo del sprint
+   - Trabajo realizado (bullets)
+   - Archivos creados/modificados (lista)
+   - Decisiones técnicas (3–6 bullets)
+   - Verificación (comandos ejecutados y resultado)
+   - Evidencias capturadas (lista de capturas/gifs/logs)
+   - Pendientes / siguientes pasos
+
+3) No incluir código salvo fragmentos mínimos (≤10 líneas) si son imprescindibles.
+
+4) Tras generar el archivo:
+   - `git add docs/memoria/<archivo>`
+   - commit con prefijo `docs:`.
