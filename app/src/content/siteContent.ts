@@ -27,6 +27,21 @@ export type ContactInfo = {
   githubUrl: string
 }
 
+export type DemoSource =
+  | {
+      id: string
+      label: string
+      type: 'video'
+      src: string
+      poster: string
+    }
+  | {
+      id: string
+      label: string
+      type: 'iframe'
+      src: string
+    }
+
 export const profile: Profile = {
   name: 'Nombre Apellido',
   role: 'Desarrollador/a Web | DAM FCT',
@@ -85,3 +100,19 @@ export const contact: ContactInfo = {
   linkedinUrl: 'https://www.linkedin.com/',
   githubUrl: 'https://github.com/',
 }
+
+export const demoSources: DemoSource[] = [
+  {
+    id: 'video',
+    label: 'Video demo',
+    type: 'video',
+    src: '/demo/app-demo.mp4',
+    poster: '/demo/app-demo-poster.jpg',
+  },
+  {
+    id: 'iframe',
+    label: 'Web demo',
+    type: 'iframe',
+    src: 'https://curriculumweb-six.vercel.app/',
+  },
+]
