@@ -1,9 +1,9 @@
 # Evidencias — Curriculum Web (FCT)
 
 ## Links obligatorios
-- Repo GitHub: (poner enlace)
-- Demo deploy (Vercel/Netlify): (poner enlace)
-- CV PDF (public/cv.pdf o link externo): (poner enlace)
+- Repo GitHub: https://github.com/David-LS-Bilbao/Curriculum-web
+- Demo deploy (Vercel/Netlify): https://curriculumweb-six.vercel.app/
+- CV PDF (public/cv.pdf o link externo): pendiente de adjuntar
 
 ## Capturas obligatorias (mínimo)
 ### Día 1 (Base)

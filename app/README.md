@@ -54,6 +54,6 @@ app/
 ## Estado actual
 
 - Hero
-- EmulatorShowcase
+- EmulatorShowcase (video + iframe + switcher + fullscreen)
 - Projects
 - Contact

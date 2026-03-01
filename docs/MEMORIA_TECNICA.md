@@ -136,6 +136,15 @@ Motivo: mejor experiencia de demo y coherencia con el requisito.
 ### 5.4 Fallback cuando falta el MP4
 Si el archivo no existe o falla la carga, se muestra mensaje guia con la ruta esperada en `public`.
 
+### 5.5 DemoSwitcher y fuente web embebida
+Se incorporo un selector de demos para alternar entre fuente de video y fuente web (`iframe`) sin recargar la pagina.
+
+### 5.6 Control de errores en iframe
+Para la demo web se definio timeout de 4 segundos. Si no carga, se muestra fallback con accion directa "Volver a video".
+
+### 5.7 Ajuste visual del PhoneFrame
+Se ajustaron estilos del contenedor y del video para reducir margenes visibles y mejorar el encaje en la ventana del telefono.
+
 ## 6) Incidencia tecnica y resolucion
 
 ### 6.1 Problema detectado
@@ -227,7 +236,7 @@ Separando datos por dominios (perfil/proyectos/demo), agregando tests de compone
 
 El proyecto cuenta con:
 - Home funcional completa,
-- emulador con video y controles reales,
+- emulador con video/iframe, DemoSwitcher y controles reales,
 - fallback de ausencia de media,
 - documentacion de uso/despliegue,
 - flujo de despliegue en Vercel desde GitHub.

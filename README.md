@@ -20,7 +20,7 @@ Portfolio/CV web profesional para FCT (DAM), con un bloque central de demo tipo 
 ## Estado actual de la Home
 
 - Hero (nombre, rol, pitch y CTAs)
-- EmulatorShowcase (marco móvil con placeholder)
+- EmulatorShowcase (PhoneFrame con DemoSwitcher video/iframe)
 - Projects (cards renderizadas desde contenido tipado)
 - Contact (email, copiar email y enlaces)
 
@@ -70,3 +70,5 @@ app/public/cv.pdf
 - `docs/PROJECT_CONTEXT.md`
 - `docs/AI_RULES.md`
 - `docs/CALIDAD.md`
+- `docs/memoria/SPRINT_D1_HOME.md`
+- `docs/memoria/SPRINT_D2_EMULATOR.md`

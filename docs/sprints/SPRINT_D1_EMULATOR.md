@@ -59,7 +59,7 @@ Implementar un emulador real de demo movil en la Home del portfolio, sin depende
 ### Creados
 
 - `app/public/demo/app-demo.mp4` (asset de demo en ruta publica)
-- `docs/memoria/SPRINT_D1_EMULATOR.md` (esta memoria)
+- `docs/sprints/SPRINT_D1_EMULATOR.md` (esta memoria)
 
 ### Modificados
 

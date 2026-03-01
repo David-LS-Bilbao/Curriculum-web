@@ -5,11 +5,11 @@
 Tener una home profesional, responsive, desplegable y con estructura sólida.
 
 ### Tareas
-- [ ] Setup React+Vite+TS en `/app` + scripts (typecheck/lint/build)
-- [ ] Layout base (Navbar, Footer, Section)
-- [ ] Home: Hero + CTA (GitHub/LinkedIn/CV/Contacto)
-- [ ] Sección Proyectos (cards con datos mock)
-- [ ] Deploy preview (Vercel/Netlify)
+- [x] Setup React+Vite+TS en `/app` + scripts (typecheck/lint/build)
+- [ ] Layout base (Navbar, Footer, Section) - pendiente cerrar navbar/footer
+- [x] Home: Hero + CTA (GitHub/LinkedIn/CV/Contacto)
+- [x] Sección Proyectos (cards con datos mock)
+- [x] Deploy preview (Vercel/Netlify)
 
 ### Criterios de aceptación
 - `npm run build` OK
@@ -24,11 +24,11 @@ Tener una home profesional, responsive, desplegable y con estructura sólida.
 PhoneFrame protagonista para enseñar app por Meet.
 
 ### Tareas
-- [ ] PhoneFrame (marco)
-- [ ] Fuentes demo: video mp4 + iframe + imágenes (fallback)
-- [ ] DemoSwitcher (2–3 demos)
-- [ ] Fullscreen
-- [ ] Accesibilidad + estados (loading/error)
+- [x] PhoneFrame (marco)
+- [ ] Fuentes demo: video mp4 + iframe + imágenes (fallback) - falta fallback por imágenes
+- [x] DemoSwitcher (2–3 demos)
+- [x] Fullscreen
+- [x] Accesibilidad + estados (loading/error)
 
 ### Criterios de aceptación
 - Cambiar demo no rompe UI
