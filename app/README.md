@@ -57,3 +57,14 @@ app/
 - EmulatorShowcase (video + iframe + switcher + fullscreen)
 - Projects
 - Contact
+
+## Fuente de contenido
+
+El contenido visible de Home se define en `src/content/siteContent.ts`:
+- Perfil y pitch profesionales
+- CTAs de Hero (GitHub, LinkedIn, CV)
+- Listado de proyectos (Curriculum Web, PymeTask, PROYECTO-MASTER-IA, Terapia Floral Silvia)
+- Fuentes del emulador (`video` + `iframe`)
+- Datos de contacto
+
+Nota: el campo `email` sigue con valor placeholder (`TODO:tu-email@dominio.com`) y debe reemplazarse por el correo final antes de versionar release final.

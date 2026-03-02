@@ -55,5 +55,5 @@ Entregar el core demo del emulador para entrevistas/presentaciones, con experien
 ## Pendientes / siguientes pasos
 - Completar fallback por imagenes (carrusel/capturas) en la fuente de demo.
 - Reemplazar `iframe` de prueba por URL final embebible estable.
-- Ajustar contenido real de proyectos y links definitivos.
+- Completar email final en `siteContent.ts` (actualmente placeholder).
 - Añadir pruebas minimas de interaccion del emulador.

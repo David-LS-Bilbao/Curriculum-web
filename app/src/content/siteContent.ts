@@ -1,3 +1,5 @@
+// app/src/content/siteContent.ts
+
 export type Profile = {
   name: string
   role: string
@@ -28,91 +30,92 @@ export type ContactInfo = {
 }
 
 export type DemoSource =
-  | {
-      id: string
-      label: string
-      type: 'video'
-      src: string
-      poster: string
-    }
-  | {
-      id: string
-      label: string
-      type: 'iframe'
-      src: string
-    }
+  | { id: string; label: string; type: "video"; src: string; poster: string }
+  | { id: string; label: string; type: "iframe"; src: string }
 
 export const profile: Profile = {
-  name: 'Nombre Apellido',
-  role: 'Desarrollador/a Web | DAM FCT',
+  name: "David López Sotelo",
+  role: "DAM (FCT) | Frontend (React/TS) + Android (Kotlin) | IA aplicada",
   pitch: [
-    'Construyo interfaces claras, rapidas y accesibles para producto web.',
-    'Me enfoco en resolver necesidades reales con entregas pequeñas y solidas.',
+    "Construyo productos web claros y accesibles, y apps Android con Kotlin + Jetpack Compose.",
+    "Aporto visión de negocio y experiencia liderando equipos, con entregas pequeñas y sólidas.",
   ],
 }
 
 export const heroCtas: HeroCta[] = [
-  { label: 'GitHub', href: 'https://github.com/', external: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/', external: true },
-  { label: 'Descargar CV', href: '/cv.pdf' },
+  { label: "GitHub", href: "https://github.com/David-LS-Bilbao", external: true },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/david-lopez-sotelo-256a70154/",
+    external: true,
+  },
+  { label: "Descargar CV", href: "/cv.pdf" },
 ]
 
 export const projects: ProjectItem[] = [
   {
-    id: 'cv-web',
-    title: 'Curriculum Web',
-    stack: ['React', 'TypeScript', 'Vite'],
+    id: "curriculum-web",
+    title: "Curriculum Web (FCT)",
+    stack: ["React", "TypeScript", "Vite", "Vercel"],
     bullets: [
-      'Home responsive con enfoque mobile-first.',
-      'Secciones desacopladas para evolucionar el MVP por iteraciones.',
+      "Portfolio con emulador móvil para mostrar demos en videollamada.",
+      "DemoSwitcher video/iframe + fullscreen + fallbacks y accesibilidad básica.",
     ],
-    repoUrl: 'https://github.com/',
-    demoUrl: 'https://curriculumweb-six.vercel.app/',
+    repoUrl: "https://github.com/David-LS-Bilbao/Curriculum-web",
+    demoUrl: "https://curriculumweb-six.vercel.app/",
   },
   {
-    id: 'mobile-emulator-demo',
-    title: 'Mobile Emulator Demo',
-    stack: ['React', 'CSS', 'HTML5 Video'],
+    id: "pymetask",
+    title: "PymeTask (TFG DAM)",
+    stack: ["Android", "Kotlin", "Jetpack Compose", "Firebase"],
     bullets: [
-      'Marco tipo movil para demo durante entrevistas o videollamadas.',
-      'Preparado para modo video, iframe o carrusel de capturas.',
+      "App Android para gestión de PYMEs (proyecto final DAM).",
+      "Arquitectura y UI moderna con Compose + persistencia y servicios Firebase.",
     ],
-    repoUrl: 'https://github.com/',
-    videoUrl: 'https://example.com/video',
+    repoUrl: "https://github.com/David-LS-Bilbao/PymeTask",
   },
   {
-    id: 'portfolio-ui-kit',
-    title: 'Portfolio UI Kit',
-    stack: ['TypeScript', 'Design Tokens', 'Accessibility'],
+    id: "proyecto-master-ia",
+    title: "PROYECTO-MASTER-IA (Verity News)",
+    stack: ["TypeScript", "Full-Stack", "IA/RAG (prototipo)"],
     bullets: [
-      'Componentes reutilizables con tipado estricto.',
-      'Controles con foco visible y navegacion por teclado.',
+      "Proyecto de máster orientado a IA aplicada (resumen/analítica de noticias).",
+      "Enfoque en arquitectura, pipeline y calidad de entrega.",
     ],
-    repoUrl: 'https://github.com/',
-    demoUrl: 'https://example.com/ui-kit',
-    videoUrl: 'https://example.com/ui-kit-video',
+    repoUrl: "https://github.com/David-LS-Bilbao/PROYECTO-MASTER-IA",
+  },
+  {
+    id: "terapia-floral-silvia",
+    title: "Terapia Floral Silvia (web)",
+    stack: ["Astro", "Frontend", "Deploy"],
+    bullets: [
+      "Web informativa con enfoque en velocidad, SEO y estructura limpia.",
+      "Diseño responsive y contenido organizado para cliente real.",
+    ],
+    repoUrl: "https://github.com/David-LS-Bilbao/terapia-floral-silvia",
   },
 ]
 
 export const contact: ContactInfo = {
-  email: 'tu.email@ejemplo.com',
-  message: 'Si quieres colaborar o ver mas demos, escribeme y te respondo pronto.',
-  linkedinUrl: 'https://www.linkedin.com/',
-  githubUrl: 'https://github.com/',
+  email: "TODO:tu-email@dominio.com",
+  message:
+    "Si quieres colaborar o ver una demo en directo (Meet), escríbeme y te respondo lo antes posible.",
+  linkedinUrl: "https://www.linkedin.com/in/david-lopez-sotelo-256a70154/",
+  githubUrl: "https://github.com/David-LS-Bilbao",
 }
 
 export const demoSources: DemoSource[] = [
   {
-    id: 'video',
-    label: 'Video demo',
-    type: 'video',
-    src: '/demo/app-demo.mp4',
-    poster: '/demo/app-demo-poster.jpg',
+    id: "video",
+    label: "Vídeo demo",
+    type: "video",
+    src: "/demo/app-demo.mp4",
+    poster: "/demo/app-demo-poster.jpg",
   },
   {
-    id: 'iframe',
-    label: 'Web demo',
-    type: 'iframe',
-    src: 'https://curriculumweb-six.vercel.app/',
+    id: "iframe",
+    label: "Web (Vercel)",
+    type: "iframe",
+    src: "https://curriculumweb-six.vercel.app/",
   },
 ]

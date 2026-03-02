@@ -34,13 +34,9 @@ export function EmulatorShowcase() {
         window.clearTimeout(iframeTimeoutRef.current)
         iframeTimeoutRef.current = null
       }
-      setIframeLoaded(false)
-      setIframeTimedOut(false)
       return
     }
 
-    setIframeLoaded(false)
-    setIframeTimedOut(false)
     iframeTimeoutRef.current = window.setTimeout(() => {
       setIframeTimedOut(true)
     }, 4000)
@@ -57,6 +53,9 @@ export function EmulatorShowcase() {
     if (demoId === activeDemoId) {
       return
     }
+
+    setIframeLoaded(false)
+    setIframeTimedOut(false)
 
     const nextDemo = demoSources.find((demo) => demo.id === demoId)
     if (nextDemo?.type === 'video') {

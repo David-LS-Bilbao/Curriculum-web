@@ -42,7 +42,7 @@ PhoneFrame protagonista para enseñar app por Meet.
 Entrega “nivel entrevista”: SEO, README, evidencias.
 
 ### Tareas
-- [ ] Contenido real (proyectos y textos finales)
+- [x] Contenido real (proyectos, textos y enlaces principales) - pendiente solo email final en `siteContent.ts`
 - [ ] SEO básico + OG
 - [ ] Lighthouse y correcciones rápidas
 - [ ] README final + checklist evidencias completo

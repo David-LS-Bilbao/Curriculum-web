@@ -24,6 +24,22 @@ Portfolio/CV web profesional para FCT (DAM), con un bloque central de demo tipo 
 - Projects (cards renderizadas desde contenido tipado)
 - Contact (email, copiar email y enlaces)
 
+## Contenido actual (`siteContent.ts`)
+
+- Perfil: **David Lopez Sotelo**
+- CTAs: GitHub, LinkedIn y descarga de CV (`/cv.pdf`)
+- Proyectos publicados:
+  - Curriculum Web (FCT)
+  - PymeTask (TFG DAM)
+  - PROYECTO-MASTER-IA (Verity News)
+  - Terapia Floral Silvia (web)
+- DemoSwitcher:
+  - Video local (`/demo/app-demo.mp4`)
+  - Web embebida (`https://curriculumweb-six.vercel.app/`)
+- Contacto:
+  - LinkedIn y GitHub reales ya cargados
+  - Email pendiente de completar en `app/src/content/siteContent.ts`
+
 ## Demo en producción
 
 - https://curriculumweb-six.vercel.app/

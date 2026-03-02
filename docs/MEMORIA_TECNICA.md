@@ -241,6 +241,22 @@ El proyecto cuenta con:
 - documentacion de uso/despliegue,
 - flujo de despliegue en Vercel desde GitHub.
 
+## 13) Actualizacion de contenido real (2026-03-02)
+
+Se actualizo `app/src/content/siteContent.ts` para pasar de contenido generico a contenido real del portfolio:
+- perfil profesional y pitch actualizados,
+- enlaces reales de GitHub y LinkedIn en Hero y Contact,
+- listado de proyectos reales (Curriculum Web, PymeTask, PROYECTO-MASTER-IA, Terapia Floral Silvia),
+- etiquetas del DemoSwitcher ajustadas ("Video demo" y "Web (Vercel)").
+
+Impacto:
+- no hubo cambios de arquitectura ni de componentes,
+- el cambio fue de contenido tipado centralizado,
+- build y typecheck se mantienen estables tras la actualizacion.
+
+Pendiente abierto:
+- reemplazar `TODO:tu-email@dominio.com` por email final antes de release final.
+
 
 ## Evidencias (portfolio/FCT)
 | ID | Hito | Evidencia | Ubicación |
