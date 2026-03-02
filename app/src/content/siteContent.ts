@@ -91,6 +91,7 @@ export const projects: ProjectItem[] = [
       'Arquitectura preparada para escalar servicios y automatizaciones.',
     ],
     repoUrl: 'https://github.com/David-LS-Bilbao/PROYECTO-MASTER-IA',
+    demoUrl: 'https://verity-news.vercel.app/',
   },
   {
     id: 'terapia-floral-silvia',
@@ -101,6 +102,8 @@ export const projects: ProjectItem[] = [
       'Diseno limpio y estructura de contenidos enfocada a conversion.',
     ],
     repoUrl: 'https://github.com/David-LS-Bilbao/terapia-floral-silvia',
+    demoUrl: 'https://silvia-adame-terapiasnaturales.vercel.app/',
+
   },
 ]
 

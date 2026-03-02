@@ -6,7 +6,7 @@ type ProjectsSectionProps = {
 }
 
 type ProjectLink = {
-  label: 'Repo' | 'Video'
+  label: 'Repo' | 'Video' | 'Web'
   href: string
   external: boolean
 }
@@ -20,6 +20,10 @@ function buildProjectLinks(project: ProjectItem): ProjectLink[] {
 
   if (project.videoUrl) {
     links.push({ label: 'Video', href: project.videoUrl, external: false })
+  }
+
+  if (project.demoUrl && (project.id === 'proyecto-master-ia' || project.id === 'terapia-floral-silvia')) {
+    links.push({ label: 'Web', href: project.demoUrl, external: true })
   }
 
   return links
