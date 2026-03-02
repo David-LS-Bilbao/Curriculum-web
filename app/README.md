@@ -10,6 +10,11 @@ Aplicacion frontend del proyecto **Curriculum Web (FCT)**, inicializada con:
 
 - https://curriculumweb-six.vercel.app/
 
+## SEO social image
+
+- Se incluye un placeholder en `app/public/og.png` para Open Graph/Twitter.
+- Sustituir `og.png` por la imagen final de portada del portfolio antes de publicar.
+
 ## Ubicacion del proyecto
 
 La app vive en `app/` porque el repositorio ya contiene `docs/` en la raiz.

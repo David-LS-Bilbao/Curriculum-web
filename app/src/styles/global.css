@@ -99,6 +99,12 @@ button:focus-visible {
   background: #1e293b;
 }
 
+.cta-fallback-note {
+  color: #475569;
+  font-size: 0.8rem;
+  margin: 0.5rem 0 0;
+}
+
 .emulator-showcase {
   text-align: center;
 }

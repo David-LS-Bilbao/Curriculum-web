@@ -29,33 +29,18 @@ export function EmulatorShowcase() {
   }, [])
 
   useEffect(() => {
-    if (!activeDemo || activeDemo.type !== 'iframe') {
-      if (iframeTimeoutRef.current !== null) {
-        window.clearTimeout(iframeTimeoutRef.current)
-        iframeTimeoutRef.current = null
-      }
-      return
-    }
-
-    iframeTimeoutRef.current = window.setTimeout(() => {
-      setIframeTimedOut(true)
-    }, 4000)
-
     return () => {
       if (iframeTimeoutRef.current !== null) {
         window.clearTimeout(iframeTimeoutRef.current)
         iframeTimeoutRef.current = null
       }
     }
-  }, [activeDemo])
+  }, [])
 
   const handleSelectDemo = (demoId: string) => {
     if (demoId === activeDemoId) {
       return
     }
-
-    setIframeLoaded(false)
-    setIframeTimedOut(false)
 
     const nextDemo = demoSources.find((demo) => demo.id === demoId)
     if (nextDemo?.type === 'video') {
@@ -65,6 +50,23 @@ export function EmulatorShowcase() {
     if (videoRef.current && !videoRef.current.paused) {
       videoRef.current.pause()
     }
+
+    if (iframeTimeoutRef.current !== null) {
+      window.clearTimeout(iframeTimeoutRef.current)
+      iframeTimeoutRef.current = null
+    }
+
+    if (nextDemo?.type === 'iframe') {
+      setIframeLoaded(false)
+      setIframeTimedOut(false)
+      iframeTimeoutRef.current = window.setTimeout(() => {
+        setIframeTimedOut(true)
+      }, 4000)
+    } else {
+      setIframeLoaded(false)
+      setIframeTimedOut(false)
+    }
+
     setIsPlaying(false)
     setActiveDemoId(demoId)
   }
