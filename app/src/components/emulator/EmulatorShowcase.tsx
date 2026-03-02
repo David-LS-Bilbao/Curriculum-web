@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { demoSources } from '../../content/siteContent'
 
@@ -37,7 +37,7 @@ export function EmulatorShowcase() {
     }
   }, [])
 
-  const handleSelectDemo = (demoId: string) => {
+  const handleSelectDemo = useCallback((demoId: string) => {
     if (demoId === activeDemoId) {
       return
     }
@@ -69,7 +69,16 @@ export function EmulatorShowcase() {
 
     setIsPlaying(false)
     setActiveDemoId(demoId)
-  }
+  }, [activeDemoId])
+
+  useEffect(() => {
+    const onOpenVideo = () => {
+      handleSelectDemo(videoDemoId)
+    }
+
+    window.addEventListener('emulator:open-video', onOpenVideo)
+    return () => window.removeEventListener('emulator:open-video', onOpenVideo)
+  }, [videoDemoId, handleSelectDemo])
 
   const handleTogglePlay = async () => {
     const video = videoRef.current

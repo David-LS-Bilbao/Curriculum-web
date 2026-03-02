@@ -80,6 +80,7 @@ export const projects: ProjectItem[] = [
       'Estructura modular para evolucionar funcionalidades por iteraciones.',
     ],
     repoUrl: 'https://github.com/David-LS-Bilbao/PymeTask',
+    videoUrl: '/demo/pymetask.mp4',
   },
   {
     id: 'proyecto-master-ia',

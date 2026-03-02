@@ -2,32 +2,30 @@ import type { ProjectItem } from '../../content/siteContent'
 
 type ProjectsSectionProps = {
   projects: ProjectItem[]
+  onOpenVideo: (title: string, src: string) => void
 }
 
 type ProjectLink = {
-  label: 'Repo' | 'Demo' | 'Video'
+  label: 'Repo' | 'Video'
   href: string
+  external: boolean
 }
 
 function buildProjectLinks(project: ProjectItem): ProjectLink[] {
   const links: ProjectLink[] = []
 
   if (project.repoUrl) {
-    links.push({ label: 'Repo', href: project.repoUrl })
-  }
-
-  if (project.demoUrl) {
-    links.push({ label: 'Demo', href: project.demoUrl })
+    links.push({ label: 'Repo', href: project.repoUrl, external: true })
   }
 
   if (project.videoUrl) {
-    links.push({ label: 'Video', href: project.videoUrl })
+    links.push({ label: 'Video', href: project.videoUrl, external: false })
   }
 
   return links
 }
 
-export function ProjectsSection({ projects }: ProjectsSectionProps) {
+export function ProjectsSection({ projects, onOpenVideo }: ProjectsSectionProps) {
   return (
     <section id="projects" className="projects-section" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Proyectos</h2>
@@ -52,9 +50,20 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
               <div className="project-actions" aria-label={`Enlaces ${project.title}`}>
                 {links.map((link) => (
-                  <a key={link.label} href={link.href} target="_blank" rel="noreferrer noopener">
-                    {link.label}
-                  </a>
+                  link.label === 'Video' ? (
+                    <button
+                      key={link.label}
+                      type="button"
+                      className="project-action-button"
+                      onClick={() => onOpenVideo(project.title, link.href)}
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <a key={link.label} href={link.href} target="_blank" rel="noreferrer noopener">
+                      {link.label}
+                    </a>
+                  )
                 ))}
               </div>
             </article>
