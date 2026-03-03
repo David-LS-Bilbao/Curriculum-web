@@ -4,11 +4,12 @@ type VideoEmulatorModalProps = {
   open: boolean
   title: string
   src: string
+  poster?: string
   onClose: () => void
   zoom?: number
 }
 
-export function VideoEmulatorModal({ open, title, src, onClose, zoom = 1.05 }: VideoEmulatorModalProps) {
+export function VideoEmulatorModal({ open, title, src, poster, onClose, zoom = 1.06 }: VideoEmulatorModalProps) {
   const phoneFrameRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -20,17 +21,19 @@ export function VideoEmulatorModal({ open, title, src, onClose, zoom = 1.05 }: V
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [hasVideo, setHasVideo] = useState(true)
 
+  const lastFocusedElement = useRef<HTMLElement | null>(null)
+
   useEffect(() => {
-    if (!open) {
-      return
-    }
+    if (open) {
+      lastFocusedElement.current = document.activeElement as HTMLElement
+      const previousOverflow = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      closeButtonRef.current?.focus()
 
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    closeButtonRef.current?.focus()
-
-    return () => {
-      document.body.style.overflow = previousOverflow
+      return () => {
+        document.body.style.overflow = previousOverflow
+        lastFocusedElement.current?.focus()
+      }
     }
   }, [open])
 
@@ -42,6 +45,28 @@ export function VideoEmulatorModal({ open, title, src, onClose, zoom = 1.05 }: V
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose()
+      }
+
+      if (event.key === 'Tab' && phoneFrameRef.current) {
+        const focusableElements = phoneFrameRef.current.parentElement?.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+        if (!focusableElements) return
+
+        const firstElement = focusableElements[0] as HTMLElement
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement
+
+        if (event.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus()
+            event.preventDefault()
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus()
+            event.preventDefault()
+          }
+        }
       }
     }
 
@@ -143,6 +168,7 @@ export function VideoEmulatorModal({ open, title, src, onClose, zoom = 1.05 }: V
         </div>
 
         <div ref={phoneFrameRef} className="phone-frame video-modal-phone-frame">
+          <div className="phone-notch" />
           <div className="phone-screen">
             {hasVideo ? (
               <>
@@ -150,6 +176,7 @@ export function VideoEmulatorModal({ open, title, src, onClose, zoom = 1.05 }: V
                   ref={videoRef}
                   className="phone-video video-modal-player"
                   src={src}
+                  poster={poster}
                   preload="metadata"
                   playsInline
                   style={{ transform: `scale(${zoom})` }}

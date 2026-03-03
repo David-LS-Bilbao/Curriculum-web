@@ -4,8 +4,8 @@
 - Proyecto: Curriculum Web (FCT)
 - Repo: https://github.com/David-LS-Bilbao/Curriculum-web
 - Producción (Vercel): https://curriculumweb-six.vercel.app/
-- Versión: v0.2.0 (o la última)
-- Fecha: YYYY-MM-DD
+- Versión: v1.0.0
+- Fecha: 2026-03-03
 - Commit: <hash corto>
 
 
@@ -258,9 +258,66 @@ Pendiente abierto:
 - reemplazar `TODO:tu-email@dominio.com` por email final antes de release final.
 
 
+## 14) Fase 3: Accesibilidad, SEO y Performance (Día 3)
+
+### 14.1 Auditoría de Accesibilidad (A11y)
+Se realizó una auditoría completa de navegación por teclado y semántica:
+- **Aria-labels**: Se añadieron etiquetas descriptivas a todos los enlaces de CTAs y botones de acción de proyectos (e.g., "Repositorio de PymeTask").
+- **Focus Trapping**: Se implementó atrapado de foco en el `VideoEmulatorModal` para evitar que la navegación por teclado "escape" al fondo.
+- **Restauración de foco**: Al cerrar el modal, el foco regresa automáticamente al botón que lo activó.
+- **Teclas rápidas**: Se aseguró que la tecla `ESC` cierre correctamente todos los diálogos.
+
+### 14.2 SEO y Social Preview
+Se optimizó la presencia en buscadores y redes sociales:
+- **Meta Tags**: Integración de Open Graph (Facebook/LinkedIn) y Twitter Cards.
+- **OG Image**: Generación de una imagen de previsualización profesional (`og.png`) de 1200x630px.
+- **URL Absolutas**: Se forzó el uso de URLs absolutas en meta-etiquetas de imagen para asegurar la carga en validadores externos.
+
+### 14.3 Rendimiento (Quick Wins)
+Acciones para mejorar el LCP (Largest Contentful Paint) y CLS (Cumulative Layout Shift):
+- **Aspect-ratio**: Se bloqueó el ratio de aspecto (9/19.5) en el CSS del emulador para evitar saltos de layout durante la carga.
+- **Optimización de Media**: Uso de `poster` para vídeos y `loading="lazy"` con `sandbox` para iframes.
+- **Vite Build**: Verificación de bundle final y optimización de assets estáticos.
+
+### 14.4 Mejoras de Layout y Aire Visual
+Se refinó la estructura visual para un acabado más premium:
+- **Contenedor**: Se aumentó el ancho máximo a 1200px para aprovechar mejor escritorios modernos.
+- **Espaciado**: Se incrementó la separación entre secciones (`gap: 5rem`) para reducir la carga cognitiva.
+- **Padding**: Aplicación de padding consistente y adaptativo en Hero, Proyectos y Contacto.
+
+### 14.5 Refinamiento Estético del HeroSection
+Para potenciar la primera impresión, se aplicaron mejoras visuales específicas:
+- **Tipografía**: Se aumentó el tamaño del H1 y se ajustó el `line-height` para mayor impacto visual.
+- **Badge**: Se añadió un distintivo superior con el stack tecnológico principal.
+- **Chips**: Implementación de pequeños identificadores de habilidades (React, Kotlin, IA).
+- **Jerarquía en CTAs**: Diferenciación clara entre acción primaria (GitHub) y acciones secundarias (LinkedIn/CV) mediante estilos CSS y efectos de elevación al hover.
+
+### 14.6 Refinamiento de la Sección de Proyectos
+Se optimizó la presentación del porfolio para una mayor cohesión visual:
+- **Layout**: Uso de `flexbox` para garantizar que todas las tarjetas tengan la misma altura y que los botones de acción se ubiquen siempre en la parte inferior.
+- **Estética**: Bordes más finos, radios de curvatura suavizados y sombras de profundidad para un aspecto moderno.
+- **Interacción**: Animaciones de transición suave al pasar el cursor sobre las tarjetas.
+- **Iconografía CSS**: Uso de selectores de atributos y pseudo-elementos para añadir iconos contextuales a los botones sin librerías externas.
+
+### 14.7 Mejora del Emulador (Showcase Protagonista)
+Se elevó el emulador de video a un elemento central del diseño:
+- **Visuales**: Inclusión de un gradiente radial suave (efecto spotlight) que destaca el dispositivo sobre el fondo.
+- **Dimensiones**: Se aumentó el tamaño relativo en pantallas grandes para mejorar la visibilidad de las demos.
+- **Diseño de Hardware**: Adición de un "notch" realista y refinamiento de la sombra paralela del dispositivo.
+- **Optimización de Media**: Ajuste de la escala del video (`transform: scale(1.06)`) y uso de `object-fit: cover` para una integración perfecta en el marco del teléfono.
+
+## 15) Conclusión del Proyecto (Release v1.0.0)
+El proyecto cumple con los requisitos de la FCT:
+- Home 100% funcional y responsive.
+- Emulador de alta fidelidad con control de media.
+- Calidad técnica validada (0 errores de build/lint).
+- Auditado para accesibilidad y SEO.
+
 ## Evidencias (portfolio/FCT)
 | ID | Hito | Evidencia | Ubicación |
 |---|------|-----------|-----------|
 | EVID-01 | Home completada | Captura desktop + móvil | docs/evidences/... |
 | EVID-02 | Emulador real | Captura reproduciendo + fullscreen | docs/evidences/... |
 | EVID-03 | Deploy Vercel | Captura “Congratulations” + URL | docs/evidences/... |
+| EVID-04 | Audit Day 3 | Reportes Acc/SEO/Perf | docs/memoria/SPRINT_D3_... |
+| EVID-05 | Release Final | Git Tag v1.0.0 | Repositorio GitHub |

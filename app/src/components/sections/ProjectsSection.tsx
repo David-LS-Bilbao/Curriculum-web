@@ -2,12 +2,13 @@ import type { ProjectItem } from '../../content/siteContent'
 
 type ProjectsSectionProps = {
   projects: ProjectItem[]
-  onOpenVideo: (title: string, src: string) => void
+  onOpenVideo: (title: string, src: string, poster?: string) => void
 }
 
 type ProjectLink = {
   label: 'Repo' | 'Video' | 'Web'
   href: string
+  poster?: string
   external: boolean
 }
 
@@ -19,7 +20,12 @@ function buildProjectLinks(project: ProjectItem): ProjectLink[] {
   }
 
   if (project.videoUrl) {
-    links.push({ label: 'Video', href: project.videoUrl, external: false })
+    links.push({
+      label: 'Video',
+      href: project.videoUrl,
+      poster: project.videoUrl.replace('.mp4', '-poster.jpg'),
+      external: false
+    })
   }
 
   if (project.demoUrl && (project.id === 'proyecto-master-ia' || project.id === 'terapia-floral-silvia')) {
@@ -59,12 +65,19 @@ export function ProjectsSection({ projects, onOpenVideo }: ProjectsSectionProps)
                       key={link.label}
                       type="button"
                       className="project-action-button"
-                      onClick={() => onOpenVideo(project.title, link.href)}
+                      onClick={() => onOpenVideo(project.title, link.href, link.poster)}
+                      aria-label={`${link.label} de ${project.title}`}
                     >
                       {link.label}
                     </button>
                   ) : (
-                    <a key={link.label} href={link.href} target="_blank" rel="noreferrer noopener">
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`${link.label === 'Repo' ? 'Repositorio' : link.label} de ${project.title}`}
+                    >
                       {link.label}
                     </a>
                   )

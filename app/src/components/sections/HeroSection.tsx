@@ -56,9 +56,15 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
 
   return (
     <section id="hero" className="hero-section" aria-labelledby="hero-heading">
-      <p className="eyebrow">Curriculum Web</p>
+      <div className="hero-badge">FCT | React+TS | Vercel</div>
       <h1 id="hero-heading">{profile.name}</h1>
       <p className="hero-role">{profile.role}</p>
+
+      <div className="hero-highlights">
+        <span className="chip">React+TS</span>
+        <span className="chip">Kotlin</span>
+        <span className="chip">IA aplicada</span>
+      </div>
 
       <div className="hero-pitch">
         {profile.pitch.map((line) => (
@@ -67,14 +73,15 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
       </div>
 
       <div className="cta-list" aria-label="Accesos directos">
-        {resolvedCtas.map((cta) => (
+        {resolvedCtas.map((cta, index) => (
           <a
             key={cta.label}
-            className="cta-button"
+            className={`cta-button ${index === 0 ? 'cta-primary' : 'cta-secondary'}`}
             href={cta.href}
             target={cta.external ? '_blank' : undefined}
             rel={cta.external ? 'noreferrer noopener' : undefined}
             title={cta.isCvFallback ? 'CV disponible en LinkedIn' : undefined}
+            aria-label={cta.label}
           >
             {cta.label}
           </a>

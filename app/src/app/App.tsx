@@ -9,15 +9,15 @@ import { AppLayout } from './layout/AppLayout'
 
 function App() {
   const [videoModalInstance, setVideoModalInstance] = useState(0)
-  const [videoModal, setVideoModal] = useState<{ open: boolean; title: string; src: string }>({
+  const [videoModal, setVideoModal] = useState<{ open: boolean; title: string; src: string; poster?: string }>({
     open: false,
     title: '',
     src: '',
   })
 
-  const handleOpenVideo = (title: string, src: string) => {
+  const handleOpenVideo = (title: string, src: string, poster?: string) => {
     setVideoModalInstance((current) => current + 1)
-    setVideoModal({ open: true, title, src })
+    setVideoModal({ open: true, title, src, poster })
   }
 
   const handleCloseVideo = () => {
@@ -37,6 +37,7 @@ function App() {
         open={videoModal.open}
         title={videoModal.title}
         src={videoModal.src}
+        poster={videoModal.poster}
         onClose={handleCloseVideo}
       />
     </>

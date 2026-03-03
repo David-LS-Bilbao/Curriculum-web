@@ -15,9 +15,19 @@ Aplicacion frontend del proyecto **Curriculum Web (FCT)**, inicializada con:
 - Se incluye un placeholder en `app/public/og.png` para Open Graph/Twitter.
 - Sustituir `og.png` por la imagen final de portada del portfolio antes de publicar.
 
+- [Repositorio en GitHub](https://github.com/David-LS-Bilbao/Curriculum-web)
+
 ## Ubicacion del proyecto
 
 La app vive en `app/` porque el repositorio ya contiene `docs/` en la raiz.
+
+## Arquitectura
+
+- **Componentes**: Separación clara entre secciones (`Hero`, `Projects`, `Contact`) y lógica de emulación (`EmulatorShowcase`, `VideoEmulatorModal`).
+- **Estado**: React `useState` para control de modales y gestión de demos.
+- **Estilos**: Vanilla CSS con enfoque Mobile-First y variables para consistencia.
+- **Contenido**: Desacoplado en `src/content/siteContent.ts` para facilitar actualizaciones.
+- **Accesibilidad**: Navegación por teclado, trapping de foco en modales y etiquetas ARIA semánticas.
 
 ## Requisitos
 
@@ -56,12 +66,10 @@ app/
     styles/
 ```
 
-## Estado actual
-
-- Hero
-- EmulatorShowcase (video + iframe + switcher + fullscreen)
-- Projects
-- Contact
+- Status: **Release v1.0.0 Finalizada**
+- Accesibilidad auditada
+- SEO y Social Preview configurados (og:image)
+- Performance optimizada (CLS/LCP quick wins)
 
 ## Fuente de contenido
 

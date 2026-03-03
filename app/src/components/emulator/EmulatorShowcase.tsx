@@ -154,78 +154,81 @@ export function EmulatorShowcase() {
         ))}
       </div>
 
-      <div ref={emulatorRef} className="phone-frame">
-        <div className="phone-screen">
-          {activeDemo?.type === 'video' && hasVideo ? (
-            <>
-              <video
-                ref={videoRef}
-                className="phone-video"
-                id={`demo-panel-${activeDemo.id}`}
-                aria-labelledby={`demo-tab-${activeDemo.id}`}
-                src={activeDemo.src}
-                poster={activeDemo.poster}
-                preload="metadata"
-                playsInline
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onVolumeChange={(event) => setIsMuted(event.currentTarget.muted)}
-                onError={() => setHasVideo(false)}
-              >
-                Tu navegador no soporta video HTML5.
-              </video>
+      <div className="emulator-container">
+        <div ref={emulatorRef} className="phone-frame">
+          <div className="phone-notch" />
+          <div className="phone-screen">
+            {activeDemo?.type === 'video' && hasVideo ? (
+              <>
+                <video
+                  ref={videoRef}
+                  className="phone-video"
+                  id={`demo-panel-${activeDemo.id}`}
+                  aria-labelledby={`demo-tab-${activeDemo.id}`}
+                  src={activeDemo.src}
+                  poster={activeDemo.poster}
+                  preload="metadata"
+                  playsInline
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onVolumeChange={(event) => setIsMuted(event.currentTarget.muted)}
+                  onError={() => setHasVideo(false)}
+                >
+                  Tu navegador no soporta video HTML5.
+                </video>
 
-              <div className="emulator-controls" role="group" aria-label="Controles de la demo movil">
-                <button type="button" onClick={handleTogglePlay} aria-pressed={isPlaying}>
-                  {isPlaying ? 'Pausar' : 'Reproducir'}
-                </button>
-                <button type="button" onClick={handleToggleMute} aria-pressed={isMuted}>
-                  {isMuted ? 'Activar sonido' : 'Silenciar'}
-                </button>
-                <button type="button" onClick={handleToggleFullscreen} aria-pressed={isFullscreen}>
-                  {isFullscreen ? 'Salir fullscreen' : 'Fullscreen'}
+                <div className="emulator-controls" role="group" aria-label="Controles de la demo movil">
+                  <button type="button" onClick={handleTogglePlay} aria-pressed={isPlaying}>
+                    {isPlaying ? 'Pausar' : 'Reproducir'}
+                  </button>
+                  <button type="button" onClick={handleToggleMute} aria-pressed={isMuted}>
+                    {isMuted ? 'Activar sonido' : 'Silenciar'}
+                  </button>
+                  <button type="button" onClick={handleToggleFullscreen} aria-pressed={isFullscreen}>
+                    {isFullscreen ? 'Salir fullscreen' : 'Fullscreen'}
+                  </button>
+                </div>
+              </>
+            ) : activeDemo?.type === 'video' ? (
+              <div className="video-missing" role="status" id={`demo-panel-${activeDemo.id}`} aria-labelledby={`demo-tab-${activeDemo.id}`}>
+                <p>No se encontro el video de demo.</p>
+                <p>
+                  Añadelo en <code>app/public/demo/app-demo.mp4</code>.
+                </p>
+              </div>
+            ) : activeDemo?.type === 'iframe' && !iframeTimedOut ? (
+              <>
+                <iframe
+                  className="phone-iframe"
+                  id={`demo-panel-${activeDemo.id}`}
+                  aria-labelledby={`demo-tab-${activeDemo.id}`}
+                  src={activeDemo.src}
+                  title={activeDemo.label}
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                  onLoad={handleIframeLoad}
+                />
+                <p className="iframe-loading" role="status" aria-live="polite">
+                  {iframeLoaded ? 'Demo web cargada' : 'Cargando demo web...'}
+                </p>
+                <div className="emulator-controls emulator-controls-single" role="group" aria-label="Controles de la demo web">
+                  <button type="button" onClick={handleToggleFullscreen} aria-pressed={isFullscreen}>
+                    {isFullscreen ? 'Salir fullscreen' : 'Fullscreen'}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="video-missing iframe-missing" role="status" id={`demo-panel-${activeDemo.id}`} aria-labelledby={`demo-tab-${activeDemo.id}`}>
+                <p>No se pudo cargar la demo web.</p>
+                <p>
+                  Comprueba la URL o politica de iframes del sitio remoto.
+                </p>
+                <button type="button" onClick={() => handleSelectDemo(videoDemoId)}>
+                  Volver a video
                 </button>
               </div>
-            </>
-          ) : activeDemo?.type === 'video' ? (
-            <div className="video-missing" role="status" id={`demo-panel-${activeDemo.id}`} aria-labelledby={`demo-tab-${activeDemo.id}`}>
-              <p>No se encontro el video de demo.</p>
-              <p>
-                Añadelo en <code>app/public/demo/app-demo.mp4</code>.
-              </p>
-            </div>
-          ) : activeDemo?.type === 'iframe' && !iframeTimedOut ? (
-            <>
-              <iframe
-                className="phone-iframe"
-                id={`demo-panel-${activeDemo.id}`}
-                aria-labelledby={`demo-tab-${activeDemo.id}`}
-                src={activeDemo.src}
-                title={activeDemo.label}
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
-                onLoad={handleIframeLoad}
-              />
-              <p className="iframe-loading" role="status" aria-live="polite">
-                {iframeLoaded ? 'Demo web cargada' : 'Cargando demo web...'}
-              </p>
-              <div className="emulator-controls emulator-controls-single" role="group" aria-label="Controles de la demo web">
-                <button type="button" onClick={handleToggleFullscreen} aria-pressed={isFullscreen}>
-                  {isFullscreen ? 'Salir fullscreen' : 'Fullscreen'}
-                </button>
-              </div>
-            </>
-          ) : (
-            <div className="video-missing iframe-missing" role="status" id={`demo-panel-${activeDemo.id}`} aria-labelledby={`demo-tab-${activeDemo.id}`}>
-              <p>No se pudo cargar la demo web.</p>
-              <p>
-                Comprueba la URL o politica de iframes del sitio remoto.
-              </p>
-              <button type="button" onClick={() => handleSelectDemo(videoDemoId)}>
-                Volver a video
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>

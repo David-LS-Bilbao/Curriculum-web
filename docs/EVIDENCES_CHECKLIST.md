@@ -19,10 +19,11 @@
 - Fallback (si iframe falla → mensaje/loader)
 
 ### Día 3 (Pulido + entrega)
-- Lighthouse (Performance/Accessibility/SEO)
-- Cards de proyectos con links reales
-- README final (sección “Decisiones” + “Deploy”)
-- Tag de versión `v1.0.0`
+- [x] Lighthouse (Performance/Accessibility/SEO) - Ver [SPRINT_D3_ACCESSIBILITY.md](./memoria/SPRINT_D3_ACCESSIBILITY.md)
+- [x] Cards de proyectos con links reales
+- [x] README final (sección “Arquitectura” + “Deploy”)
+- [x] Tag de versión `v1.0.0`
+- [x] Reportes adicionales: [SEO](./memoria/SPRINT_D3_SEO.md), [Performance](./memoria/SPRINT_D3_PERF.md)
 
 ## GIF / Vídeo demo
 - GIF 8–12s: scroll + cambiar demo + fullscreen
