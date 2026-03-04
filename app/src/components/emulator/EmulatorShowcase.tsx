@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { demoSources } from '../../content/siteContent'
+import { resolveAssetPath } from '../../utils/assetPath'
 
 export function EmulatorShowcase() {
   const emulatorRef = useRef<HTMLDivElement>(null)
@@ -18,6 +19,8 @@ export function EmulatorShowcase() {
   const [iframeTimedOut, setIframeTimedOut] = useState(false)
 
   const activeDemo = demoSources.find((demo) => demo.id === activeDemoId) ?? demoSources[0]
+  const resolvedActiveSrc = activeDemo ? resolveAssetPath(activeDemo.src) : ''
+  const resolvedActivePoster = activeDemo?.type === 'video' ? resolveAssetPath(activeDemo.poster) : undefined
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -165,8 +168,8 @@ export function EmulatorShowcase() {
                   className="phone-video"
                   id={`demo-panel-${activeDemo.id}`}
                   aria-labelledby={`demo-tab-${activeDemo.id}`}
-                  src={activeDemo.src}
-                  poster={activeDemo.poster}
+                  src={resolvedActiveSrc}
+                  poster={resolvedActivePoster}
                   preload="metadata"
                   playsInline
                   onPlay={() => setIsPlaying(true)}
@@ -202,7 +205,7 @@ export function EmulatorShowcase() {
                   className="phone-iframe"
                   id={`demo-panel-${activeDemo.id}`}
                   aria-labelledby={`demo-tab-${activeDemo.id}`}
-                  src={activeDemo.src}
+                  src={resolvedActiveSrc}
                   title={activeDemo.label}
                   loading="lazy"
                   sandbox="allow-scripts allow-same-origin"

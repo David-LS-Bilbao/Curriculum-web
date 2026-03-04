@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { HeroCta, Profile } from '../../content/siteContent'
+import { resolveAssetPath } from '../../utils/assetPath'
 
 type HeroSectionProps = {
   profile: Profile
@@ -8,14 +9,15 @@ type HeroSectionProps = {
 
 export function HeroSection({ profile, ctas }: HeroSectionProps) {
   const [hasCvPdf, setHasCvPdf] = useState<boolean | null>(null)
-  const avatarSrc = `${import.meta.env.BASE_URL}userImage.png`
+  const avatarSrc = resolveAssetPath('/userImage.png')
+  const cvPath = resolveAssetPath('/cv.pdf')
 
   useEffect(() => {
     let isMounted = true
 
     const checkCvPdf = async () => {
       try {
-        const response = await fetch('/cv.pdf', { method: 'HEAD', cache: 'no-store' })
+        const response = await fetch(cvPath, { method: 'HEAD', cache: 'no-store' })
         if (isMounted) {
           setHasCvPdf(response.ok)
         }
@@ -31,7 +33,7 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
     return () => {
       isMounted = false
     }
-  }, [])
+  }, [cvPath])
 
   const resolvedCtas = useMemo(() => {
     return ctas.map((cta) => {
@@ -48,6 +50,7 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
 
       return {
         ...cta,
+        href: cta.href.startsWith('/') ? resolveAssetPath(cta.href) : cta.href,
         isCvFallback: false,
       }
     })

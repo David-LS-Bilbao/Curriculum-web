@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import { resolveAssetPath } from '../../utils/assetPath'
 
 type VideoEmulatorModalProps = {
   open: boolean
@@ -20,6 +21,8 @@ export function VideoEmulatorModal({ open, title, src, poster, onClose, zoom = 1
   const [volume, setVolume] = useState(100)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [hasVideo, setHasVideo] = useState(true)
+  const resolvedSrc = resolveAssetPath(src)
+  const resolvedPoster = poster ? resolveAssetPath(poster) : undefined
 
   const lastFocusedElement = useRef<HTMLElement | null>(null)
 
@@ -175,8 +178,8 @@ export function VideoEmulatorModal({ open, title, src, poster, onClose, zoom = 1
                 <video
                   ref={videoRef}
                   className="phone-video video-modal-player"
-                  src={src}
-                  poster={poster}
+                  src={resolvedSrc}
+                  poster={resolvedPoster}
                   preload="metadata"
                   playsInline
                   style={{ transform: `scale(${zoom})` }}
@@ -215,7 +218,7 @@ export function VideoEmulatorModal({ open, title, src, poster, onClose, zoom = 1
               <div className="video-missing" role="status">
                 <p>No se encontro el video del proyecto.</p>
                 <p>
-                  Ruta esperada: <code>{src}</code>
+                  Ruta esperada: <code>{resolvedSrc}</code>
                 </p>
               </div>
             )}
