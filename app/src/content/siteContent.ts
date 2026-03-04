@@ -103,7 +103,17 @@ export const projects: ProjectItem[] = [
     ],
     repoUrl: 'https://github.com/David-LS-Bilbao/terapia-floral-silvia',
     demoUrl: 'https://silvia-adame-terapiasnaturales.vercel.app/',
-
+  },
+  {
+    id: 'bootcamp-medicheck',
+    title: 'Medicheck (Bootcamp)',
+    stack: ['HTML5', 'CSS3', 'Responsive'],
+    bullets: [
+      'MVP estatico para seguimiento de tratamientos con interfaz web.',
+      'Maqueta mobile-first con dashboard, historial y formularios.',
+    ],
+    repoUrl: 'https://github.com/David-LS-Bilbao/BOOTCAMP_medicheck',
+    demoUrl: 'https://david-ls-bilbao.github.io/BOOTCAMP_medicheck/',
   },
 ]
 

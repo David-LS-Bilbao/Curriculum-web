@@ -28,7 +28,7 @@ function buildProjectLinks(project: ProjectItem): ProjectLink[] {
     })
   }
 
-  if (project.demoUrl && (project.id === 'proyecto-master-ia' || project.id === 'terapia-floral-silvia')) {
+  if (project.demoUrl) {
     links.push({ label: 'Web', href: project.demoUrl, external: true })
   }
 

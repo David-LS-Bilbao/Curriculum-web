@@ -57,7 +57,16 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
   return (
     <section id="hero" className="hero-section" aria-labelledby="hero-heading">
       <div className="hero-badge">FCT | React+TS | Vercel</div>
-      <h1 id="hero-heading">{profile.name}</h1>
+      <div className="hero-title-row">
+        <h1 id="hero-heading">{profile.name}</h1>
+        <img
+          className="hero-avatar"
+          src="/userImage.png"
+          alt={`Foto de perfil de ${profile.name}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <p className="hero-role">{profile.role}</p>
 
       <div className="hero-highlights">
