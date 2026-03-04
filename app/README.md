@@ -8,7 +8,7 @@ Aplicacion frontend del proyecto **Curriculum Web (FCT)**, inicializada con:
 
 ## Demo en producción
 
-- https://curriculumweb-six.vercel.app/
+- https://david-ls-bilbao.github.io/Curriculum-web/
 
 ## SEO social image
 
@@ -66,7 +66,7 @@ app/
     styles/
 ```
 
-- Status: **Release v1.0.0 Finalizada**
+- Status: **Release v0.0.1**
 - Accesibilidad auditada
 - SEO y Social Preview configurados (og:image)
 - Performance optimizada (CLS/LCP quick wins)
@@ -76,8 +76,6 @@ app/
 El contenido visible de Home se define en `src/content/siteContent.ts`:
 - Perfil y pitch profesionales
 - CTAs de Hero (GitHub, LinkedIn, CV)
-- Listado de proyectos (Curriculum Web, PymeTask, PROYECTO-MASTER-IA, Terapia Floral Silvia)
+- Listado de proyectos (Curriculum Web, PymeTask, PROYECTO-MASTER-IA, Terapia Floral Silvia, Medicheck)
 - Fuentes del emulador (`video` + `iframe`)
 - Datos de contacto
-
-Nota: el campo `email` sigue con valor placeholder (`TODO:tu-email@dominio.com`) y debe reemplazarse por el correo final antes de versionar release final.

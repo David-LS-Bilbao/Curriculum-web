@@ -23,9 +23,11 @@ export type ProjectItem = {
 
 export type ContactInfo = {
   email: string
+  phone: string
   message: string
-  linkedinUrl: string
-  githubUrl: string
+  facebookUrl: string
+  instagramUrl: string
+  xUrl: string
 }
 
 export type DemoSource =
@@ -69,7 +71,7 @@ export const projects: ProjectItem[] = [
       'Secciones desacopladas para evolucionar el MVP por iteraciones.',
     ],
     repoUrl: 'https://github.com/David-LS-Bilbao/Curriculum-web',
-    demoUrl: 'https://curriculumweb-six.vercel.app/',
+    demoUrl: 'https://david-ls-bilbao.github.io/Curriculum-web/',
   },
   {
     id: 'pyme-task',
@@ -118,10 +120,12 @@ export const projects: ProjectItem[] = [
 ]
 
 export const contact: ContactInfo = {
-  email: 'tu.email@ejemplo.com',
-  message: 'Si quieres colaborar o ver mas demos, escribeme y te respondo pronto.',
-  linkedinUrl: 'https://www.linkedin.com/in/david-lopez-sotelo-256a70154/',
-  githubUrl: 'https://github.com/David-LS-Bilbao',
+  email: 'lopezsotelo77@gmail.com',
+  phone: '605279604',
+  message: 'Disponible para colaboraciones y oportunidades junior. Contactame por email o telefono y te respondo pronto.',
+  facebookUrl: 'https://facebook.com',
+  instagramUrl: 'https://instagram.com',
+  xUrl: 'https://x.com',
 }
 
 export const demoSources: DemoSource[] = [

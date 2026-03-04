@@ -1,3 +1,4 @@
+/* Estilos del bloque :root. */
 :root {
   --text-primary: #111827;
   --bg-canvas: #e6edf6;
@@ -12,10 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estilos del bloque *. */
 * {
   box-sizing: border-box;
 }
 
+/* Estilos del bloque body. */
 body {
   margin: 0;
   background:
@@ -25,24 +28,30 @@ body {
   color: var(--text-primary);
 }
 
+/* Estilos del bloque #root. (el bloque donde se muestran todo lo demas*/
 #root {
   min-height: 100vh;
+  padding-top: 0.85rem; /*margen superior*/
+  padding-bottom: 0.85rem;
 }
 
+/* Estilos del bloque a. */
 a {
   color: #0f3a9b;
 }
 
 a:focus-visible,
+/* Estilos del bloque button:focus-visible. */
 button:focus-visible {
   outline: 3px solid #1d4ed8;
   outline-offset: 2px;
 }
 
+/* Estilos del bloque .app-layout. */
 .app-layout {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 3rem 1.5rem 5rem;
+  padding: 1.5rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -53,6 +62,7 @@ button:focus-visible {
   backdrop-filter: blur(4px);
 }
 
+/* Estilos del bloque .eyebrow. */
 .eyebrow {
   color: #475569;
   font-size: 0.875rem;
@@ -62,6 +72,7 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+/* Estilos del bloque .hero-section. */
 .hero-section {
   border-bottom: 1px solid #cbd5e1;
   padding-bottom: 3.5rem;
@@ -70,6 +81,7 @@ button:focus-visible {
   align-items: flex-start;
 }
 
+/* Estilos del bloque .hero-badge. */
 .hero-badge {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
@@ -83,6 +95,7 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+/* Estilos del bloque .hero-title-row. */
 .hero-title-row {
   align-items: center;
   display: flex;
@@ -91,10 +104,12 @@ button:focus-visible {
   width: 100%;
 }
 
+/* Estilos del bloque .hero-title-row h1. */
 .hero-title-row h1 {
   min-width: 0;
 }
 
+/* Estilos del bloque .hero-avatar. */
 .hero-avatar {
   aspect-ratio: 1 / 1;
   border: 3px solid rgba(255, 255, 255, 0.92);
@@ -108,6 +123,7 @@ button:focus-visible {
   width: 96px;
 }
 
+/* Estilos del bloque .hero-section h1. */
 .hero-section h1 {
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 4rem);
@@ -116,6 +132,7 @@ button:focus-visible {
   font-weight: 800;
 }
 
+/* Estilos del bloque .hero-role. */
 .hero-role {
   margin: 0.75rem 0 0;
   color: #1e293b;
@@ -123,6 +140,7 @@ button:focus-visible {
   font-weight: 600;
 }
 
+/* Estilos del bloque .hero-highlights. */
 .hero-highlights {
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +148,7 @@ button:focus-visible {
   margin-top: 1.25rem;
 }
 
+/* Estilos del bloque .hero-highlights .chip. */
 .hero-highlights .chip {
   background: #eff6ff;
   border: 1px solid #dbeafe;
@@ -140,17 +159,20 @@ button:focus-visible {
   padding: 0.35rem 0.75rem;
 }
 
+/* Estilos del bloque .hero-pitch. */
 .hero-pitch {
   display: grid;
   gap: 0.5rem;
   margin: 1rem 0 0;
 }
 
+/* Estilos del bloque .hero-pitch p. */
 .hero-pitch p {
   margin: 0;
   max-width: 68ch;
 }
 
+/* Estilos del bloque .cta-list. */
 .cta-list {
   display: flex;
   flex-direction: column;
@@ -158,6 +180,7 @@ button:focus-visible {
   margin-top: 1.2rem;
 }
 
+/* Estilos del bloque .cta-button. */
 .cta-button {
   border-radius: 0.85rem;
   display: inline-flex;
@@ -169,44 +192,52 @@ button:focus-visible {
   font-size: 1rem;
 }
 
+/* Estilos del bloque .cta-primary. */
 .cta-primary {
   background: #0f172a;
   color: #f8fafc;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* Estilos del bloque .cta-primary:hover. */
 .cta-primary:hover {
   background: #1e293b;
   transform: translateY(-1px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+/* Estilos del bloque .cta-secondary. */
 .cta-secondary {
   background: #ffffff;
   color: #0f172a;
   border: 1px solid #cbd5e1;
 }
 
+/* Estilos del bloque .cta-secondary:hover. */
 .cta-secondary:hover {
   background: #f8fafc;
   border-color: #94a3b8;
   transform: translateY(-1px);
 }
 
+/* Estilos del bloque .cta-button:active. */
 .cta-button:active {
   transform: translateY(0);
 }
 
+/* Estilos del bloque .cta-fallback-note. */
 .cta-fallback-note {
   color: #475569;
   font-size: 0.8rem;
   margin: 0.5rem 0 0;
 }
 
+/* Estilos del bloque .emulator-showcase h2. */
 .emulator-showcase h2 {
   margin: 0 0 2.5rem;
 }
 
+/* Estilos del bloque .emulator-container. */
 .emulator-container {
   position: relative;
   padding: 3rem 1rem;
@@ -218,6 +249,7 @@ button:focus-visible {
   margin-bottom: 2rem;
 }
 
+/* Estilos del bloque .demo-switcher. */
 .demo-switcher {
   display: flex;
   gap: 0.5rem;
@@ -225,6 +257,7 @@ button:focus-visible {
   margin-bottom: 0.8rem;
 }
 
+/* Estilos del bloque .demo-tab. */
 .demo-tab {
   background: #e2e8f0;
   border: 1px solid #cbd5e1;
@@ -237,12 +270,14 @@ button:focus-visible {
   padding: 0.4rem 0.8rem;
 }
 
+/* Estilos del bloque .demo-tab[aria-selected="true"]. */
 .demo-tab[aria-selected="true"] {
   background: #0f172a;
   border-color: #0f172a;
   color: #f8fafc;
 }
 
+/* Estilos del bloque .phone-frame. */
 .phone-frame {
   background: #0f172a;
   border: 4px solid #334155;
@@ -258,6 +293,7 @@ button:focus-visible {
   overflow: hidden;
 }
 
+/* Estilos del bloque .phone-notch. */
 .phone-notch {
   position: absolute;
   top: 0;
@@ -271,6 +307,7 @@ button:focus-visible {
   z-index: 10;
 }
 
+/* Estilos del bloque .phone-notch::before. */
 .phone-notch::before {
   content: "";
   position: absolute;
@@ -283,6 +320,7 @@ button:focus-visible {
   border-radius: 999px;
 }
 
+/* Estilos del bloque .phone-frame:fullscreen. */
 .phone-frame:fullscreen {
   align-items: center;
   background: #020617;
@@ -292,10 +330,12 @@ button:focus-visible {
   width: 100%;
 }
 
+/* Estilos del bloque .phone-frame:fullscreen .phone-screen. */
 .phone-frame:fullscreen .phone-screen {
   max-height: 90vh;
 }
 
+/* Estilos del bloque .phone-screen. */
 .phone-screen {
   align-items: stretch;
   aspect-ratio: 9 / 19.5;
@@ -309,6 +349,7 @@ button:focus-visible {
   overflow: hidden;
 }
 
+/* Estilos del bloque .phone-video. */
 .phone-video {
   background: #000000;
   border-radius: 2.25rem;
@@ -324,6 +365,7 @@ button:focus-visible {
   z-index: 1;
 }
 
+/* Estilos del bloque .phone-iframe. */
 .phone-iframe {
   background: #ffffff;
   border: 0;
@@ -334,6 +376,7 @@ button:focus-visible {
   aspect-ratio: 9 / 19.5;
 }
 
+/* Estilos del bloque .iframe-loading. */
 .iframe-loading {
   color: #94a3b8;
   font-size: 0.75rem;
@@ -342,6 +385,7 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Estilos del bloque .emulator-controls. */
 .emulator-controls {
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(12px);
@@ -356,10 +400,12 @@ button:focus-visible {
   margin-top: auto;
 }
 
+/* Estilos del bloque .emulator-controls-single. */
 .emulator-controls-single {
   grid-template-columns: 1fr;
 }
 
+/* Estilos del bloque .emulator-controls button. */
 .emulator-controls button {
   background-color: #1e293b;
   border: 1px solid #334155;
@@ -372,10 +418,12 @@ button:focus-visible {
   padding: 0.35rem 0.45rem;
 }
 
+/* Estilos del bloque .emulator-controls button:hover. */
 .emulator-controls button:hover {
   background-color: #334155;
 }
 
+/* Estilos del bloque .video-missing. */
 .video-missing {
   align-content: center;
   background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
@@ -389,16 +437,19 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Estilos del bloque .video-missing p. */
 .video-missing p {
   margin: 0;
 }
 
+/* Estilos del bloque .video-missing code. */
 .video-missing code {
   background: #e2e8f0;
   border-radius: 0.35rem;
   padding: 0.1rem 0.3rem;
 }
 
+/* Estilos del bloque .iframe-missing button. */
 .iframe-missing button {
   background: #0f172a;
   border: 0;
@@ -410,20 +461,24 @@ button:focus-visible {
   padding: 0.6rem 0.95rem;
 }
 
+/* Estilos del bloque .projects-section. */
 .projects-section {
   padding-top: 1rem;
 }
 
+/* Estilos del bloque .projects-section h2. */
 .projects-section h2 {
   margin: 0 0 1.5rem;
 }
 
+/* Estilos del bloque .projects-grid. */
 .projects-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
 }
 
+/* Estilos del bloque .project-card. */
 .project-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -436,12 +491,14 @@ button:focus-visible {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
+/* Estilos del bloque .project-card:hover. */
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   border-color: #cbd5e1;
 }
 
+/* Estilos del bloque .project-card h3. */
 .project-card h3 {
   margin: 0;
   font-size: 1.25rem;
@@ -449,21 +506,25 @@ button:focus-visible {
   color: #0f172a;
 }
 
+/* Estilos del bloque .project-stack. */
 .project-stack {
   color: #475569;
   font-size: 0.92rem;
   margin: 0.45rem 0 0.8rem;
 }
 
+/* Estilos del bloque .project-card ul. */
 .project-card ul {
   margin: 0;
   padding-left: 1.1rem;
 }
 
+/* Estilos del bloque .project-card li+li. */
 .project-card li+li {
   margin-top: 0.35rem;
 }
 
+/* Estilos del bloque .project-actions. */
 .project-actions {
   display: flex;
   flex-wrap: wrap;
@@ -473,6 +534,7 @@ button:focus-visible {
 }
 
 .project-actions a,
+/* Estilos del bloque .project-action-button. */
 .project-action-button {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
@@ -490,6 +552,7 @@ button:focus-visible {
 }
 
 .project-actions a:hover,
+/* Estilos del bloque .project-action-button:hover. */
 .project-action-button:hover {
   background: #e2e8f0;
   color: #0f172a;
@@ -497,22 +560,26 @@ button:focus-visible {
 }
 
 /* Pseudo-icons */
+/* Estilos del bloque .project-actions a[aria-label^="Repositorio"]::before. */
 .project-actions a[aria-label^="Repositorio"]::before {
   content: "⑂";
   /* Simple git-branch-like icon */
   font-size: 1.1rem;
 }
 
+/* Estilos del bloque .project-actions button[aria-label^="Video"]::before. */
 .project-actions button[aria-label^="Video"]::before {
   content: "▶";
   font-size: 0.8rem;
 }
 
+/* Estilos del bloque .project-actions a[aria-label^="Web"]::before. */
 .project-actions a[aria-label^="Web"]::before {
   content: "↗";
   font-size: 1rem;
 }
 
+/* Estilos del bloque .video-modal-overlay. */
 .video-modal-overlay {
   align-items: center;
   background: rgba(2, 6, 23, 0.82);
@@ -524,6 +591,7 @@ button:focus-visible {
   z-index: 1000;
 }
 
+/* Estilos del bloque .video-modal-panel. */
 .video-modal-panel {
   background: #0f172a;
   border: 1px solid #334155;
@@ -537,6 +605,7 @@ button:focus-visible {
   width: 100%;
 }
 
+/* Estilos del bloque .video-modal-header. */
 .video-modal-header {
   align-items: center;
   color: #f8fafc;
@@ -544,11 +613,13 @@ button:focus-visible {
   justify-content: space-between;
 }
 
+/* Estilos del bloque .video-modal-header h2. */
 .video-modal-header h2 {
   font-size: 1rem;
   margin: 0;
 }
 
+/* Estilos del bloque .video-modal-close. */
 .video-modal-close {
   background: #1e293b;
   border: 1px solid #475569;
@@ -560,19 +631,23 @@ button:focus-visible {
   min-width: 2rem;
 }
 
+/* Estilos del bloque .video-modal-phone-frame. */
 .video-modal-phone-frame {
   width: 100%;
 }
 
+/* Estilos del bloque .video-modal-player. */
 .video-modal-player {
   transform-origin: center;
 }
 
+/* Estilos del bloque .emulator-controls-modal. */
 .emulator-controls-modal {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 1rem;
 }
 
+/* Estilos del bloque .video-volume. */
 .video-volume {
   align-items: center;
   color: #f8fafc;
@@ -584,10 +659,12 @@ button:focus-visible {
   justify-content: center;
 }
 
+/* Estilos del bloque .video-volume input[type="range"]. */
 .video-volume input[type="range"] {
   width: 100%;
 }
 
+/* Estilos del bloque .contact-section. */
 .contact-section {
   background: #ffffff;
   border: 1px solid #cbd5e1;
@@ -595,18 +672,48 @@ button:focus-visible {
   padding: 2.5rem 2rem;
 }
 
+/* Estilos del bloque .contact-section h2. */
 .contact-section h2 {
   margin: 0 0 1rem;
 }
 
+/* Estilos del bloque .contact-section p. */
 .contact-section p {
   margin: 0;
 }
 
+/* Estilos del bloque .contact-email. */
 .contact-email {
   margin-top: 0.65rem;
 }
 
+/* Estilos del bloque .contact-details. */
+.contact-details {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+}
+
+/* Estilos del bloque .contact-item. */
+.contact-item {
+  color: #1e293b;
+}
+
+/* Estilos del bloque .contact-label. */
+.contact-label {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Estilos del bloque .contact-actions. */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+/* Estilos del bloque .copy-button. */
 .copy-button {
   background: #0f172a;
   border: 0;
@@ -619,6 +726,12 @@ button:focus-visible {
   padding: 0.6rem 0.95rem;
 }
 
+/* Estilos del bloque .copy-button-secondary. */
+.copy-button-secondary {
+  background: #334155;
+}
+
+/* Estilos del bloque .copy-status. */
 .copy-status {
   color: #334155;
   font-size: 0.92rem;
@@ -626,6 +739,7 @@ button:focus-visible {
   margin-top: 0.55rem;
 }
 
+/* Estilos del bloque .contact-links. */
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -633,10 +747,12 @@ button:focus-visible {
   margin-top: 0.75rem;
 }
 
+/* Estilos del bloque .contact-links a. */
 .contact-links a {
   font-weight: 600;
 }
 
+/* Estilos del bloque .sr-only. */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -648,29 +764,37 @@ button:focus-visible {
   border: 0;
 }
 
+/* Ajustes responsive para este tamano de pantalla. */
 @media (max-width: 768px) {
+/* Estilos del bloque .phone-frame. */
   .phone-frame {
     max-width: 360px;
     width: 90%;
   }
 }
 
+/* Ajustes responsive para este tamano de pantalla. */
 @media (min-width: 768px) {
+/* Estilos del bloque .hero-avatar. */
   .hero-avatar {
     width: 132px;
   }
 
+/* Estilos del bloque .cta-list. */
   .cta-list {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
+/* Estilos del bloque .projects-grid. */
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* Ajustes responsive para este tamano de pantalla. */
 @media (min-width: 1024px) {
+/* Estilos del bloque .projects-grid. */
   .projects-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

@@ -1,6 +1,11 @@
-# Curriculum Web (FCT)
+# Curriculum Web (FCT) - v0.0.1
 
-Portfolio/CV web profesional para FCT (DAM), con un bloque central de demo tipo emulador móvil para presentar proyectos en reuniones (por ejemplo, Google Meet).
+Portfolio/CV web profesional para FCT (DAM), con foco en presentacion de proyectos y demo en formato movil.
+
+## Produccion
+
+- GitHub Pages: https://david-ls-bilbao.github.io/Curriculum-web/
+- Repositorio: https://github.com/David-LS-Bilbao/Curriculum-web
 
 ## Stack
 
@@ -17,39 +22,29 @@ Portfolio/CV web profesional para FCT (DAM), con un bloque central de demo tipo 
 └─ app/    # aplicacion frontend
 ```
 
-## Estado actual de la Home
+## Estado actual
 
-- Hero (nombre, rol, pitch y CTAs)
-- EmulatorShowcase (PhoneFrame con DemoSwitcher video/iframe)
-- Projects (cards renderizadas desde contenido tipado)
-- Contact (email, copiar email y enlaces)
+- Hero con imagen de perfil, CTAs y fallback de CV.
+- EmulatorShowcase con selector video/web.
+- Modal de video para proyectos.
+- Projects con botones Repo/Web/Video segun contenido.
+- Contact con email, telefono y redes sociales.
+- Deploy automatico a GitHub Pages con GitHub Actions.
 
-## Contenido actual (`siteContent.ts`)
+## Proyectos en la home
 
-- Perfil: **David Lopez Sotelo**
-- CTAs: GitHub, LinkedIn y descarga de CV (`/cv.pdf`)
-- Proyectos publicados:
-  - Curriculum Web (FCT)
-  - PymeTask (TFG DAM)
-  - PROYECTO-MASTER-IA (Verity News)
-  - Terapia Floral Silvia (web)
-- DemoSwitcher:
-  - Video local (`/demo/app-demo.mp4`)
-  - Web embebida (`https://curriculumweb-six.vercel.app/`)
-- Contacto:
-  - LinkedIn y GitHub reales ya cargados
-  - Email pendiente de completar en `app/src/content/siteContent.ts`
-
-## Demo en producción
-
-- https://curriculumweb-six.vercel.app/
+- Curriculum Web
+- PymeTask
+- PROYECTO-MASTER-IA
+- terapia-floral-silvia
+- Medicheck (Bootcamp)
 
 ## Requisitos
 
 - Node.js 20+
 - npm 10+
 
-## Puesta en marcha local
+## Desarrollo local
 
 ```bash
 cd app
@@ -57,7 +52,7 @@ npm install
 npm run dev
 ```
 
-## Scripts importantes
+## Scripts utiles
 
 Ejecutar desde `app/`:
 
@@ -67,24 +62,15 @@ npm run lint
 npm run build
 ```
 
-## Archivo CV
+## Assets publicos relevantes
 
-El botón "Descargar CV" apunta a:
+- `app/public/cv.pdf`
+- `app/public/userImage.png`
+- `app/public/demo/app-demo.mp4`
+- `app/public/demo/pymetask.mp4`
 
-```text
-/cv.pdf
-```
-
-Para activarlo, coloca tu CV en:
-
-```text
-app/public/cv.pdf
-```
-
-## Documentación del proyecto
+## Documentacion
 
 - `docs/PROJECT_CONTEXT.md`
 - `docs/AI_RULES.md`
 - `docs/CALIDAD.md`
-- `docs/memoria/SPRINT_D1_HOME.md`
-- `docs/memoria/SPRINT_D2_EMULATOR.md`
