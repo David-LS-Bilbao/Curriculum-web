@@ -8,6 +8,7 @@ type HeroSectionProps = {
 
 export function HeroSection({ profile, ctas }: HeroSectionProps) {
   const [hasCvPdf, setHasCvPdf] = useState<boolean | null>(null)
+  const avatarSrc = `${import.meta.env.BASE_URL}userImage.png`
 
   useEffect(() => {
     let isMounted = true
@@ -61,7 +62,7 @@ export function HeroSection({ profile, ctas }: HeroSectionProps) {
         <h1 id="hero-heading">{profile.name}</h1>
         <img
           className="hero-avatar"
-          src="/userImage.png"
+          src={avatarSrc}
           alt={`Foto de perfil de ${profile.name}`}
           loading="lazy"
           decoding="async"
